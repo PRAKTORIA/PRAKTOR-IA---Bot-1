@@ -255,14 +255,18 @@ function ComprobarDestinatario(dest) {
 
 //TT GUARDAR ARCHIVOS
 export async function GuardarArchivos(ctx) {
-  RevisarTemp()
-  //ss si el proveedr es Baileys
-  if (PROVEEDOR.name === ENUNPROV.BAILEYS) {
-    if (PROVEEDOR.prov.store?.state?.connection === 'open') {
+  try {
+    RevisarTemp()
+    console.log('Descargado archivo 1')
+    //ss si el proveedr es Baileys
+    if (PROVEEDOR.name === ENUNPROV.BAILEYS) {
+      console.log('Descargado archivo de Baileys')
       const localPath = await PROVEEDOR.prov.saveFile(ctx, { path: './temp' })
-      console.log(localPath)
+      console.log('archivo guardado en:', localPath)
       return localPath
     }
+  } catch (error) {
+    console.log('GuardarArchivos', error)
+    return null
   }
-  return null
 }
