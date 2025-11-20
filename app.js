@@ -33,7 +33,7 @@ const FLUJOS_ENTRADA = [
 const main = async () => {
   const adapterDB = new MemoryDB()
   const adapterFlow = createFlow(FLUJOS_ENTRADA)
-  const adapterProvider = createProvider(BaileysProvider)
+  const adapterProvider = createProvider(BaileysProvider, { version: [2, 3000, 1025190524] })
 
   //SS CREAR CARPETA TEMP
   RevisarTemp()
