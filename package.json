@@ -11,8 +11,6 @@
   },
   "keywords": [],
   "dependencies": {
-    "@adiwajshing/baileys": "5.0.0",
-    "@adiwajshing/keyed-db": "0.2.4",
     "@builderbot/bot": "1.3.5",
     "@builderbot/provider-baileys": "1.3.5",
     "appsheet-connect": "^0.0.8",
